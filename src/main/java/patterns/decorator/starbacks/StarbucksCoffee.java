@@ -18,6 +18,7 @@ public class StarbucksCoffee {
         // Объект добавки в своем поле содержат ссылку на объект напитка
         beverage3 = new Soy(beverage3);
         beverage3 = new Mocha(beverage3);
+        beverage3 = new Soy(beverage3);
         beverage3 = new Whip(beverage3);
         System.out.println(beverage3.getDescription() + " $" + beverage3.cost());
     }
