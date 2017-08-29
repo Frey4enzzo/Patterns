@@ -1,9 +1,10 @@
 package patterns.command.remote;
 
+// этот класс создает объекты команд
 public class RemoteLoader {
     public static void main(String[] args) {
 
-
+        // Пульт является инициатором
         RemoteControl remoteControl = new RemoteControl();
 
         // создаем устройства
