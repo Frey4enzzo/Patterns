@@ -32,4 +32,9 @@ public class NoQuarterState implements State{
     public void dispense() {
         System.out.println("Сначала надо вставить монетку в автомат");
     }
+
+    @Override
+    public String toString() {
+        return "в ожидании когда бросят монетку";
+    }
 }

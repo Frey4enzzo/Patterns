@@ -4,7 +4,7 @@ package patterns.proxy.gumball;
 public class GumballMachineTestDrive {
     public static void main(String[] args) {
 
-        GumballMachine gumballMachine = new GumballMachine(10);
+        GumballMachine gumballMachine = new GumballMachine("Звездный городок",10);
 
         System.out.println(gumballMachine);
 
@@ -13,19 +13,14 @@ public class GumballMachineTestDrive {
         System.out.println(gumballMachine);
 
         gumballMachine.insertQuarter();
-        gumballMachine.ejectQuarter();
         gumballMachine.turnCrank();
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
         gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
-        gumballMachine.insertQuarter();
-        gumballMachine.turnCrank();
 
-        System.out.println(gumballMachine);
+        GumballMonitor monitor = new GumballMonitor(gumballMachine);
+        monitor.report();
     }
 }

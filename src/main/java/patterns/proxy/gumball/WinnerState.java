@@ -42,4 +42,9 @@ public class WinnerState implements State{
             }
         }
     }
+
+    @Override
+    public String toString() {
+        return "выдача 2-х шариков, потому что Вы победитель по жизни!";
+    }
 }

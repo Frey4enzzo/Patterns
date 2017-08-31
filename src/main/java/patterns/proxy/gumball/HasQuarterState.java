@@ -42,4 +42,9 @@ public class HasQuarterState implements State {
     public void dispense() {
         System.out.println("Шарик не выдан");
     }
+
+    @Override
+    public String toString() {
+        return "в ожидании когда дернут за рычаг";
+    }
 }

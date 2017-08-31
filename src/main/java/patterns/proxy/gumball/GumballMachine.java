@@ -12,6 +12,7 @@ public class GumballMachine {
     State hasQuarterState;
     State soldState;
     State winnerState;
+    String location;
 
     // переменная для хранения текущего состояния
     State state = soldOutState;
@@ -19,12 +20,13 @@ public class GumballMachine {
     int count = 0;
 
     // конструктор
-    public GumballMachine(int numberGumballs) {
+    public GumballMachine(String location, int numberGumballs) {
         soldOutState = new SoldOutState(this);
         noQuarterState = new NoQuarterState(this);
         hasQuarterState = new HasQuarterState(this);
         soldState = new SoldState(this);
         winnerState = new WinnerState(this);
+        this.location = location;
         this.count = numberGumballs;
         if (numberGumballs > 0) {
             state = noQuarterState;
@@ -91,6 +93,10 @@ public class GumballMachine {
         return winnerState;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
     public State getState() {
         return state;
     }
@@ -99,6 +105,7 @@ public class GumballMachine {
         StringBuffer result = new StringBuffer();
         result.append("\nMighty Gumball, Inc.");
         result.append("\nJava-enabled Standing Gumball Model #2004");
+        result.append("\nLocation: " + location);
         result.append("\nInventory: " + count + " Gumball");
         if (count != 1) {
             result.append("s");

@@ -31,4 +31,9 @@ public class SoldOutState implements State {
     public void dispense() {
         System.out.println("Шарик не выдан");
     }
+
+    @Override
+    public String toString() {
+        return "нет шариков, все распродано";
+    }
 }

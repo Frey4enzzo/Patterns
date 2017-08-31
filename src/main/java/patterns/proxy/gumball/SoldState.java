@@ -36,4 +36,9 @@ public class SoldState implements State {
             gumballMachine.setState(gumballMachine.getSoldOutState()); // если шарики закончились
         }
     }
+
+    @Override
+    public String toString() {
+        return "выдача шарика";
+    }
 }
