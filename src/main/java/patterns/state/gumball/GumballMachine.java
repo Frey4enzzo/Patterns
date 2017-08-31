@@ -4,8 +4,8 @@ package patterns.state.gumball;
 public class GumballMachine {
     // 4 состояния
     final static int SOLD_OUT = 0;
-    final static int NO_QUARTER = 0;
-    final static int HAS_QUARTER = 0;
+    final static int NO_QUARTER = 1;
+    final static int HAS_QUARTER = 2;
     final static int SOLD = 3;
     // текущее состоние, по умолчанию нет шариков
     int state = SOLD_OUT;
@@ -78,5 +78,27 @@ public class GumballMachine {
         } else if (state == HAS_QUARTER) {
             System.out.println("Нет шариков для выдачи");
         }
+    }
+
+    public String toString() {
+        StringBuffer result = new StringBuffer();
+        result.append("\nMighty Gumball, Inc.");
+        result.append("\nJava-enabled Standing Gumball Model #2004\n");
+        result.append("Inventory: " + count + " Gumball");
+        if (count != 1) {
+            result.append("s");
+        }
+        result.append("\nMachine is ");
+        if (state == SOLD_OUT) {
+            result.append("sold out");
+        } else if (state == NO_QUARTER) {
+            result.append("waiting for quarter");
+        } else if (state == HAS_QUARTER) {
+            result.append("waiting for turn of crank");
+        } else if (state == SOLD) {
+            result.append("delivering a Gumball");
+        }
+        result.append("\n");
+        return result.toString();
     }
 }
